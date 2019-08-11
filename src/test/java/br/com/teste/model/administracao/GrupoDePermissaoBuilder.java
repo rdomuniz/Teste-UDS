@@ -18,7 +18,7 @@ public class GrupoDePermissaoBuilder {
 	
 	public static GrupoDePermissao get2() {
 		GrupoDePermissao grupoDePermissao = new GrupoDePermissao();
-		grupoDePermissao.setId(Long.valueOf(1));
+		grupoDePermissao.setId(Long.valueOf(2));
 		grupoDePermissao.setDescricao("grupo de permissão 2");
 		grupoDePermissao.setAtivo(true);
 		grupoDePermissao.getAcessos().add(AcessoDoSistema.USUARIO);
