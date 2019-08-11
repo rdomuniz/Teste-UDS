@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<PEDIDO
+		PEDIDO_ID="-1"
+		TAMANHO="GRANDE"
+		SABOR="CALABRESA"
+	/>
+	
+	<PEDIDO_PERSONALIZACAO
+		PEDIDO_ID="-1"
+		PERSONALIZACAO="BORDA_RECHEADA"
+	/>
+</dataset>
