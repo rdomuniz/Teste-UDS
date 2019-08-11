@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<USUARIO 
+    	USUARIO_ID="-1" 
+    	NOME="usuario 1"
+    	SENHA="senhaTeste1" 
+    	CLASSIFICACAO="GERENTE"
+    	ADMINISTRADOR="TRUE" 
+    	DATA_AUTENTICACAO="2019-01-01"
+    	STATUS_REGISTRO="ATIVO"
+    	DATA_INCLUSAO="2019-01-01"
+		DATA_ALTERACAO="2019-01-01"
+    />
+
+    <GRUPO_PERMISSAO
+    	GRUPO_PERMISSAO_ID="1"
+    	DESCRICAO="b teste 1"
+    	ATIVO="false"
+    />
+    <GRUPO_PERMISSAO
+    	GRUPO_PERMISSAO_ID="2"
+    	DESCRICAO="a teste 2"
+    	ATIVO="true"
+    />
+    
+    <GRUPO_PERMISSAO_ACESSO
+    	GRUPO_PERMISSAO_ID="2"
+    	ACESSO="USUARIO"
+    />
+    
+    <GRUPO_PERMISSAO_PERMISSAO
+    	GRUPO_PERMISSAO_ID="2"
+    	PERMISSAO="USUARIO_INCLUIR"
+    />
+    
+    <GRUPO_USUARIO
+    	USUARIO_ID="-1"
+    	GRUPO_PERMISSAO_ID="2"
+    />
+    
+</dataset>
