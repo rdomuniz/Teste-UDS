@@ -10,6 +10,7 @@ public enum AcessoDoSistema {
 
 	ATRIBUICAO_PERMISSAO("Administração / Atribuição de Permissão", true),
 	GRUPO_PERMISSAO("Administração / Grupo de Permissão", true),
+	PEDIDO("Pedido", true),
 	USUARIO("Administração / Usuário", true);
 	
 	private String descricao;
