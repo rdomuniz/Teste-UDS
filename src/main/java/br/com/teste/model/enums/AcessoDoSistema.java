@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 public enum AcessoDoSistema {
 
+	ATRIBUICAO_PERMISSAO("Administração / Atribuição de Permissão", true),
 	GRUPO_PERMISSAO("Administração / Grupo de Permissão", true),
 	USUARIO("Administração / Usuário", true);
 	
@@ -28,7 +29,7 @@ public enum AcessoDoSistema {
 	}
 	
 	public static List<AcessoDoSistema> getAdministracao() {
-		return newArrayList(USUARIO, GRUPO_PERMISSAO);
+		return newArrayList(USUARIO, GRUPO_PERMISSAO, ATRIBUICAO_PERMISSAO);
 	}
 	
 	public static List<AcessoDoSistema> getSemAdministracao() {
