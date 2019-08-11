@@ -6,6 +6,7 @@ public enum PermissaoDoSistema {
 	GRUPO_PERMISSAO_INCLUIR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.INCLUIR, true),
 	GRUPO_PERMISSAO_EDITAR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.EDITAR, true),
 	GRUPO_PERMISSAO_EXCLUIR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.EXCLUIR, true),
+	PEDIDO_INCLUIR (AcessoDoSistema.PEDIDO, DescricaoDePermicao.INCLUIR, true),
 	USUARIO_INCLUIR (AcessoDoSistema.USUARIO, DescricaoDePermicao.INCLUIR, true),
 	USUARIO_EDITAR (AcessoDoSistema.USUARIO, DescricaoDePermicao.EDITAR, true),
 	USUARIO_EXCLUIR (AcessoDoSistema.USUARIO, DescricaoDePermicao.EXCLUIR, true),
