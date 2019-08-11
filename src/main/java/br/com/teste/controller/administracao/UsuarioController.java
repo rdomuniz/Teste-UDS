@@ -44,7 +44,7 @@ public class UsuarioController extends GeralController {
 	}
 	
 	@GetMapping("/{id}")
-	@PreAuthorize("hasRole('USUARIO') OR hasRole('USUARIO_INCLUIR') OR hasRole('USUARIO_EDITAR')")
+	@PreAuthorize("hasRole('USUARIO') OR hasRole('USUARIO_EDITAR')")
 	public Usuario buscar(@PathVariable(value = "id") Long id) {
 		Usuario usuario = usuarioService.buscar(id);
 		preparaParaTela(usuario);

@@ -125,7 +125,7 @@ public class UsuarioControllerTest extends ControllerTests {
 	}
 	
 	@Test
-	@WithUserDetails("ultramanutencao")
+	@WithUserDetails("udsmanutencao")
 	public void deveriaAtualizarSenha() throws Exception {
 		when(usuarioService.atualizarSenha(any(Usuario.class))).thenReturn(UsuarioBuilder.get3());
 		mvc.perform(put("/usuarios/senha/atualizar")
