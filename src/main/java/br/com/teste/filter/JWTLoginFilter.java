@@ -18,7 +18,9 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.teste.model.AccountCredentials;
+import br.com.teste.model.UserAccount;
 import br.com.teste.service.util.TokenAuthenticationService;
+import br.com.teste.service.util.UserDetailsServiceImpl;
 
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
@@ -44,6 +46,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Authentication auth) throws IOException, ServletException {
 		TokenAuthenticationService.addAuthentication(response, auth);
+		((UserDetailsServiceImpl)userDetailsService).updateDateAuthentication(((UserAccount)auth.getPrincipal()).getId());
 	}
 
 }
