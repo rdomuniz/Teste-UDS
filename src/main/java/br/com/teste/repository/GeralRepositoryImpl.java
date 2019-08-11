@@ -11,7 +11,7 @@ import org.hibernate.Session;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
-import br.com.teste.exception.TesteException;
+import br.com.teste.exception.TesteUDSException;
 import br.com.teste.model.CacheDeReservaDeCodigo;
 
 public class GeralRepositoryImpl<T, ID> extends SimpleJpaRepository<T, ID> implements GeralRepository<T, ID> {
@@ -33,7 +33,7 @@ public class GeralRepositoryImpl<T, ID> extends SimpleJpaRepository<T, ID> imple
 	@Override
 	public Long carregaPrimeiroCodigoDisponivel() {
 		if("java.lang.Long".compareTo(entityInformation.getIdType().getName()) != 0)
-			throw new TesteException("Metodo usado só para entidades com id em long!");
+			throw new TesteUDSException("Metodo usado só para entidades com id em long!");
 		CacheDeReservaDeCodigo cache = CacheDeReservaDeCodigo.getInstance();
 		String table = entityInformation.getJavaType().getAnnotation(Entity.class).name();
 		String coluna = "";
