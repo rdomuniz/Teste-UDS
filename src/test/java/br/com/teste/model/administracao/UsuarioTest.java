@@ -1,6 +1,7 @@
 package br.com.teste.model.administracao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.Optional;
 import java.util.Set;
@@ -92,6 +93,24 @@ public class UsuarioTest extends GeralTests {
 	@Test
 	public void deveriaValidarComSucessoCamposNaAlteracao() {
 		assertEquals(0, validator.validate(UsuarioBuilder.get2(), ONUpdate.class).size());
+	}
+	
+	public static void verifica(Usuario usuarioEsperado, Usuario usuario) {
+		assertNotNull(usuario);
+		assertEquals(usuarioEsperado.getId(), usuario.getId());
+		assertEquals(usuarioEsperado.getNome(), usuario.getNome());
+		assertEquals(usuarioEsperado.getLogin(), usuario.getLogin());
+		assertEquals(usuarioEsperado.getSenha(), usuario.getSenha());
+		assertEquals(usuarioEsperado.getClassificacao(), usuario.getClassificacao());
+		assertEquals(usuarioEsperado.getAdministrador(), usuario.getAdministrador());
+		assertEquals(usuarioEsperado.getDataDeAutenticacao(), usuario.getDataDeAutenticacao());
+		assertEquals(usuarioEsperado.getStatusDoRegistro(), usuario.getStatusDoRegistro());
+		assertEquals(usuarioEsperado.getGrupos().size(), usuario.getGrupos().size());
+		for(GrupoDePermissao grupoDePermissaoEsperado : usuarioEsperado.getGrupos()) {
+			assertNotNull(usuario.getGrupos().stream().filter(
+				grupoDePermissaoFiltro -> grupoDePermissaoEsperado.getId() != null && grupoDePermissaoFiltro.getId() != null && grupoDePermissaoEsperado.getId().compareTo(grupoDePermissaoFiltro.getId()) == 0
+			).findAny().orElse(null));
+		}
 	}
 	
 	private String getMessageValidation(Set<ConstraintViolation<Usuario>> validate, String path) {
