@@ -47,6 +47,8 @@ public class UsuarioBuilder {
 		usuario.setConfirmacaoDeSenha("senha3");
 		usuario.setClassificacao(ClassificacaoDoUsuario.GERENTE);
 		usuario.setAdministrador(false);
+		usuario.getGrupos().add(GrupoDePermissaoBuilder.get1());
+		usuario.getGrupos().add(GrupoDePermissaoBuilder.get2());
 		usuario.setDataDeAutenticacao(GeralBuilder.getData("03/01/2019"));
 		usuario.setStatusDoRegistro(StatusDoRegistro.ATIVO);
 		usuario.setDataDeInclusao(GeralBuilder.getData("03/01/2019"));
