@@ -21,7 +21,7 @@ import br.com.teste.service.GeralServiceImpl;
 @Transactional
 public class UsuarioServiceImpl extends GeralServiceImpl implements UsuarioService {
 
-private static final String MSG_NAO_EXISTE = "Usuário não existe!";
+	private static final String MSG_NAO_EXISTE = "Usuário não existe!";
 	
 	private Relogio relogio;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
