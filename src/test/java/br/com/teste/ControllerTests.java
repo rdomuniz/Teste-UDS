@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import br.com.teste.service.administracao.GrupoDePermissaoService;
+import br.com.teste.service.administracao.UsuarioService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -19,5 +20,6 @@ public abstract class ControllerTests {
 	protected MockMvc mvc;
 	
 	@MockBean protected GrupoDePermissaoService grupoDePermissaoService;
+	@MockBean protected UsuarioService usuarioService;
 	
 }
