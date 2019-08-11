@@ -46,7 +46,7 @@ public class GrupoDePermissaoController extends GeralController {
 	}
 	
 	@GetMapping("/{id}")
-	@PreAuthorize("hasRole('GRUPO_PERMISSAO') OR hasRole('GRUPO_PERMISSAO_INCLUIR') OR hasRole('GRUPO_PERMISSAO_EDITAR')")
+	@PreAuthorize("hasRole('GRUPO_PERMISSAO') OR hasRole('GRUPO_PERMISSAO_EDITAR')")
 	public GrupoDePermissao burcar(@PathVariable(value="id") Long id) {
 		return grupoDePermissaoService.buscar(id);
 	}

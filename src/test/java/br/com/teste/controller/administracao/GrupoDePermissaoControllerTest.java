@@ -41,7 +41,7 @@ public class GrupoDePermissaoControllerTest extends ControllerTests {
 			.contentType(MediaType.APPLICATION_JSON_UTF8))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-			.andExpect(content().string("[{\"id\":1,\"descricao\":\"grupo de permissão 1\",\"ativo\":true},{\"id\":1,\"descricao\":\"grupo de permissão 2\",\"ativo\":true}]"));
+			.andExpect(content().string("[{\"id\":1,\"descricao\":\"grupo de permissão 1\",\"ativo\":true},{\"id\":2,\"descricao\":\"grupo de permissão 2\",\"ativo\":true}]"));
 		ArgumentCaptor<GrupoDePermissaoFilter> argument = ArgumentCaptor.forClass(GrupoDePermissaoFilter.class);
 		verify(grupoDePermissaoService, times(1)).listar(argument.capture());
 		assertEquals("teste", argument.getValue().getDescricao());

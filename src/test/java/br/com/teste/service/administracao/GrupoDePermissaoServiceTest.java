@@ -74,12 +74,10 @@ public class GrupoDePermissaoServiceTest extends GeralTests {
 	
 	@Test
 	public void deveriaCriar() {
-		GrupoDePermissao retorno;
 		GrupoDePermissao grupoDePermissao = GrupoDePermissaoBuilder.get1();
 		grupoDePermissao.setId(null);
-		retorno = GrupoDePermissaoBuilder.get1();
 		when(grupoDePermissaoRepository.save(grupoDePermissao)).thenReturn(GrupoDePermissaoBuilder.get1());
-		retorno = grupoDePermissaoService.criar(grupoDePermissao);
+		GrupoDePermissao retorno = grupoDePermissaoService.criar(grupoDePermissao);
 		ArgumentCaptor<GrupoDePermissao> argument = ArgumentCaptor.forClass(GrupoDePermissao.class);
 		verify(grupoDePermissaoRepository, times(1)).save(argument.capture());
 		GrupoDePermissao grupoDePermissaoEsperado = GrupoDePermissaoBuilder.get1();
