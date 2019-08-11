@@ -1,18 +1,26 @@
 package br.com.teste.model.administracao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
@@ -96,6 +104,15 @@ public class Usuario implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATA_EXCLUSAO", nullable = true)
 	private Date dataDeExclusao;
+	
+	@JoinTable(
+		name = "GRUPO_USUARIO",
+		joinColumns = @JoinColumn(name = "USUARIO_ID", foreignKey = @ForeignKey(name = "USUARIO_FK")),
+		inverseJoinColumns = @JoinColumn(name = "GRUPO_PERMISSAO_ID", foreignKey = @ForeignKey(name = "GRUPO_PERMISSAO_FK")),
+		uniqueConstraints = {@UniqueConstraint(name = "GRUPO_USUARIO_UK", columnNames = {"USUARIO_ID","GRUPO_PERMISSAO_ID"})}
+	)
+	@ManyToMany(fetch = FetchType.LAZY)
+	private List<GrupoDePermissao> grupos = new ArrayList<>();
 	
 	public void apreencheAtualizacao(Usuario usuario) {
 		setNome(usuario.getNome());
