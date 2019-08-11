@@ -17,10 +17,10 @@ import br.com.teste.repository.GeralRepositoryImpl;
 @ComponentScan(basePackages="br.com.teste")
 @EntityScan(basePackages="br.com.teste.model")
 @EnableJpaRepositories(basePackages="br.com.teste.repository", repositoryBaseClass=GeralRepositoryImpl.class)
-public class TesteApplication {
+public class TesteUDSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TesteApplication.class, args);
+		SpringApplication.run(TesteUDSApplication.class, args);
 	}
 	
 	@Bean
