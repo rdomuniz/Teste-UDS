@@ -59,7 +59,7 @@ public class Usuario implements Serializable {
 	private String nome;
 	
 	@JsonView(UsuarioView.class)
-	@Column(name = "LOGIN", length = 20)
+	@Column(name = "LOGIN", nullable = true, length = 20)
 	@NotBlank(message = "Login deve ser informado!", groups = {ONCreate.class, ONUpdate.class})
 	@Size(message = "Login ultrapassou 20 caracteres!", max = 20, groups = {ONCreate.class, ONUpdate.class})
 	private String login;
@@ -76,7 +76,7 @@ public class Usuario implements Serializable {
 	
 	@JsonView(UsuarioView.class)
 	@Enumerated(EnumType.STRING)
-	@Column(name = "CLASSIFICACAO", length = 50)
+	@Column(name = "CLASSIFICACAO", nullable = true, length = 50)
 	private ClassificacaoDoUsuario classificacao;
 	
 	@JsonView(UsuarioView.class)
