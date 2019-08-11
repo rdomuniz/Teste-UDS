@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 
 public enum AcessoDoSistema {
 
-	DEFAULT("default", true);
+	GRUPO_PERMISSAO("Administração / Grupo de Permissão", true),
+	USUARIO("Administração / Usuário", true);
 	
 	private String descricao;
 	private Boolean ativo;
@@ -27,7 +28,7 @@ public enum AcessoDoSistema {
 	}
 	
 	public static List<AcessoDoSistema> getAdministracao() {
-		return newArrayList(DEFAULT);
+		return newArrayList(USUARIO, GRUPO_PERMISSAO);
 	}
 	
 	public static List<AcessoDoSistema> getSemAdministracao() {

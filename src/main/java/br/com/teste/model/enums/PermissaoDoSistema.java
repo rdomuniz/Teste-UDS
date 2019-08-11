@@ -2,7 +2,12 @@ package br.com.teste.model.enums;
 
 public enum PermissaoDoSistema {
 
-	DEFAULT (AcessoDoSistema.DEFAULT, "default", true);
+	GRUPO_PERMISSAO_INCLUIR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.INCLUIR, true),
+	GRUPO_PERMISSAO_EDITAR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.EDITAR, true),
+	GRUPO_PERMISSAO_EXCLUIR (AcessoDoSistema.GRUPO_PERMISSAO, DescricaoDePermicao.EXCLUIR, true),
+	USUARIO_INCLUIR (AcessoDoSistema.USUARIO, DescricaoDePermicao.INCLUIR, true),
+	USUARIO_EDITAR (AcessoDoSistema.USUARIO, DescricaoDePermicao.EDITAR, true),
+	USUARIO_EXCLUIR (AcessoDoSistema.USUARIO, DescricaoDePermicao.EXCLUIR, true);
 	
 	private AcessoDoSistema acessoDoSistema;
 	private String descricao;
