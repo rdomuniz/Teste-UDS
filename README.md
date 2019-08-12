@@ -18,6 +18,9 @@ usuário "udsmanutencao" com senha "password" tem acesso a todos end-points
 caso queria pode se cadastrar um usurios, grupo de acesso e atribulir permição para controle dos recursos
 
 end-points pricipais do teste são:
+- /login (post)
+ body: {"username":"udsmanutencao","password":"password"}
+
 - /tamanhos (get)
 - /sabores (get)
 - /personalizacoes (get)
