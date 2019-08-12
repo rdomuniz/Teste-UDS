@@ -27,3 +27,6 @@ end-points pricipais do teste são:
 - /pedidos/{1} (get)
 - /pedidos (post)
 - /pedidos/montarResumo (put)
+
+url da api(swagger)
+- /swagger-ui.html
